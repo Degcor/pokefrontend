@@ -1,0 +1,81 @@
+<div class="container">
+    <div *ngIf="pokemon">
+        <mat-card class="pokemon-card">
+            <div *ngIf="pokemon['type_two']">
+                <span>
+                    <img class="type-two" [src]="pokemon['type_one'].image" alt="">
+                </span>
+                <span *ngIf="pokemon['type_two']">
+                    <img class="type-one" [src]="pokemon['type_two'].image" alt="">
+                </span>
+            </div>
+            <div *ngIf="!pokemon['type_two']">
+                <span>
+                    <img class="type-one" [src]="pokemon['type_one'].image" alt="">
+                </span>
+            </div>
+            <mat-card-header>
+                <h3 class="pokemon-name">#{{ pokemon.id }} {{ pokemon.name }}</h3>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <div class="two-grid">
+                    <div class="content-image">
+                        <img mat-card-image class="image-card" [src]="pokemon.image" alt="">
+                    </div>
+                    <div>
+                        <mat-list>
+                            <mat-list-item>
+                                <h3 matLine>Category:</h3>
+                                <p class="card-content-description" style="flex:none;">{{ pokemon.category }}</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <h3 matLine>Height:</h3>
+                                <p class="card-content-description">{{ pokemon.height }}M</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <h3 matLine>Weight:</h3>
+                                <p class="card-content-description">{{ pokemon.weight }}Kg</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <h3 matLine>Description:</h3>
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{ pokemon.description }}
+                            </mat-list-item>
+                        </mat-list>
+                        <mat-divider></mat-divider>
+                    </div>
+                </div>
+                <div class="two-grid">
+                    <div>
+                        <h3>Strong against:</h3>
+                    </div>
+                    <div class="b-l">
+                        <h3>Weak against:</h3>
+                    </div>
+                </div>
+                <div class="two-grid">
+                    <div class="three-grid">
+                        <div *ngFor="let type of pokemon['double_damage_to']">
+                            <div [style.background]=[colors[type.name]] class="type-card">
+                                {{ type.name }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three-grid b-l">
+                        <div *ngFor="let type of pokemon['double_damage_from']">
+                            <div [style.background]=[colors[type.name]] class="type-card">
+                                {{ type.name }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div *ngIf="!pokemon">
+        <div class="loading-mask" *ngIf="loading"> </div>
+    </div>
+</div>

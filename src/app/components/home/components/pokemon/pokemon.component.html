@@ -1,0 +1,37 @@
+<mat-card class="pokemon-card" [routerLink]="['/pokemon', pokemon.id]">
+    <span>
+        <img class="type-one" [src]="pokemon['type_one'].image" alt="">
+    </span>
+    <span *ngIf="pokemon['type_two']">
+        <img class="type-two" [src]="pokemon['type_two'].image" alt="">
+    </span>
+    <div class="top-container">
+        <img mat-card-image [src]="pokemon.image" alt="">
+    </div>
+    <mat-card-content>
+        <div class="card-content-name">
+            <h2 class="pokemon-name mg-0">{{ pokemon.name }}</h2>
+        </div>
+        <mat-list>
+            <mat-list-item>
+                <h3 matLine>Height</h3>
+                <p class="card-content-description">{{ pokemon.height }}M</p>
+            </mat-list-item>
+            <mat-list-item>
+                <h3 matLine>Weight</h3>
+                <p class="card-content-description">{{ pokemon.weight }}Kg</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <h3 matLine>Weak Against:</h3>
+            </mat-list-item>
+        </mat-list>
+        <div class="card-grid">
+            <div *ngFor="let type of pokemon['double_damage_from']">
+                <div [style.background]=[colors[type.name]] class="type-card">
+                    {{ type.name }}
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

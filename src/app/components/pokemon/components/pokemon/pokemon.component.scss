@@ -1,0 +1,78 @@
+.pokemon-card {
+    width: 70%;
+    background: rgb(51, 51, 51);
+    margin: auto;
+    margin-bottom: 15px;
+    transition: all 0.5s;
+}
+.content-image{
+    text-align: center;
+}
+.image-card{
+    width: 250px;
+}
+.card-title {
+  color:rgb(255, 152, 0)
+}
+.card-content-description {
+  color:rgb(255, 152, 0)
+}
+.pokemon-list-item {
+  justify-content: space-between;
+}
+.pokemon-list-item p {
+  text-align: right;
+}
+.two-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+}
+.three-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: auto;
+}
+
+.b-l{
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgba(255,255,255,.12);
+    padding-left: 10px;
+}
+.mg-0{
+    margin:0;
+}
+.card-content-name{
+    text-align: center;
+}
+.top-container{
+    padding: 0 30px 0 30px;
+}
+.type-card{
+    margin-right: 10px;
+    width: 70px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+}
+.pokemon-name{
+    text-transform: capitalize;
+}
+
+.type-one{
+    position: absolute !important;
+    top: 10px;
+    right: 10px;
+    width: 55px;
+    z-index: 1;
+}
+.type-two{
+    position: absolute !important;
+    top: 10px;
+    right: 80px;
+    width: 55px;
+    z-index: 1;
+}

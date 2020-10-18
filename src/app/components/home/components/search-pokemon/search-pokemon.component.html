@@ -1,0 +1,27 @@
+<mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput type="text" [(ngModel)]="pokemonName">
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Select an Type</mat-label>
+    <mat-select [(value)]="pokemonType">
+        <mat-option>None</mat-option>
+        <mat-option value="grass">Grass</mat-option>
+        <mat-option value="fire">Fire</mat-option>
+        <mat-option value="water">Water</mat-option>
+        <mat-option value="poison">Poison</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Sort by</mat-label>
+    <mat-select [(value)]="pokemonSort">
+        <mat-option>None</mat-option>
+        <mat-option value="name">Name</mat-option>
+        <mat-option value="height">Height</mat-option>
+        <mat-option value="weight">Weight</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="warn" (click)="search()">Buscar</button>
+<button mat-raised-button color="primary" (click)="doTryLuck()">Random!</button>
